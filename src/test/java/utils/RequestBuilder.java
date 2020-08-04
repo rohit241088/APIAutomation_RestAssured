@@ -16,7 +16,7 @@ public class RequestBuilder {
 	}
 	
 	//Method to build request on basis of parameters passed, if query, path,headers,file parameters is not available for request, pass null as value
-	public static Response buildRequest(String resource,String requestType,String baseURI, Map<String,String> pathParameter,Map<String,String> queryParameters,Map<String,String>headers,File file) {
+	public static Response buildRequest(String resource,String requestType,Object object,String baseURI, Map<String,String> pathParameter,Map<String,String> queryParameters,Map<String,String>headers,File file) {
 		
 		
 		requestBuild=new RequestSpecBuilder().setBaseUri(baseURI);
@@ -41,10 +41,10 @@ public class RequestBuilder {
 				request=given().spec(requestBuild.build()).log().all();
 				response=request.when().delete(resource);			}
 			if(requestType.trim().equalsIgnoreCase("post")) {
-				request=given().spec(requestBuild.build()).log().all();
+				request=given().spec(requestBuild.build()).body(object).log().all();
 				response=request.when().post(resource);			}
 			if(requestType.trim().equalsIgnoreCase("put")) {
-			request=requestBuild.build();
+			request=requestBuild.build().body(object);
 			response=request.when().put(resource);
 			}
 		return response;
