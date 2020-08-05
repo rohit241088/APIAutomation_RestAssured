@@ -1,26 +1,40 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.response.Response;
-import utils.RequestBuilder;
+import utils.Builder;
+import static org.junit.Assert.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StepDefinitions {
 
-	Response response=null;
+	
+	Builder object=new Builder();
 	@Given("User is on home page")
 	public void user_is_on_home_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	response=RequestBuilder.buildRequest("search", "get", "https://www.google.co.in", null, null, null, null, null);
-		System.out.println();
+		
+	object.callAPI("", null, "get", "https://www.google.com", null, null, null, null);
+		
 	}
 
 
 
-	@When("hit api")
-	public void hit_api() {
-	   System.out.println("see what happened");
+    @When("^hit  search \"([^\"]*)\" api with \"([^\"]*)\" and parametertype \"([^\"]*)\" and parameterValue \"([^\"]*)\"$")
+	public void hit_api(String args,String args2,String paramterType,String paramterValue) {
+    	Map<String, String> queryParam=new HashMap<String,String>();
+    	queryParam.put(paramterType, paramterValue);
+		 object.callAPI(args2, null,args, "https://www.google.com",null, queryParam, null, null);
+		// object.responseSpec(object.getResponse(), 200, 1000l, null, null);
 	 
 	}
+    
+    @Then("^Response should contains \"([^\"]*)\"$")
+    public void response_should_contains_something(String strArg1) throws Throwable {
+    boolean value=object.getResponse().asString().split(strArg1).length!=0;
+    assertTrue(value);
+    }
 
 }
