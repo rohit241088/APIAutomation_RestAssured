@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import utils.RequestBuilder;
 
-public class stepDefinitions {
+public class StepDefinitions {
 
 	Response response=null;
 	@Given("User is on home page")
