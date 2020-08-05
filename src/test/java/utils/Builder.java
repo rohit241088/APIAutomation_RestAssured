@@ -87,12 +87,11 @@ public class Builder {
 		
 	}
 	
-	public ResponseSpecification responseSpec(int statusCode,Long ResponseTimeInMilliSeconds, String pathOfBody, String expectedValue) {
-		IsEqual<Long> object=new IsEqual<>(ResponseTimeInMilliSeconds);
-	
+	public ResponseSpecification responseSpec(int statusCode) {
+		
 		ResponseSpecification res=new ResponseSpecBuilder()
-		.expectStatusCode(statusCode).expectContentType("application/json")
-		.expectResponseTime(object).expectStatusLine("OK").build();
+		.expectStatusCode(statusCode).setDefaultParser(defaultParser.JSON).expectContentType("application/json")
+		.expectStatusLine("HTTP/1.1 200 OK").build();
 		
 		
 		return res;
