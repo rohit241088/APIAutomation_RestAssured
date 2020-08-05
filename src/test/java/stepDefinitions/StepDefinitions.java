@@ -33,7 +33,7 @@ public class StepDefinitions {
     
     @Then("^Response should contains \"([^\"]*)\" and \"([^\"]*)\"$")
     public void response_should_contains_something(String strArg1,String arg2) throws Throwable {
-    	object.getResponse().then().spec(object.responseSpec(200)).extract().asString();
+    	object.getResponse().then().spec(object.responseSpec(200)).extract().jsonPath();
     	JsonPath json=object.getJson();
     boolean isEqual=json.getInt("data.size()")==6;
     	assertTrue(isEqual);
