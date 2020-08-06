@@ -88,6 +88,17 @@ public class Builder {
 		
 	}
 	
+	public boolean checkValue(String pathOf,String expectedValue) {
+		JsonPath js=new JsonPath(response.asString());
+		if(js.getString(pathOf).equalsIgnoreCase(expectedValue)) 
+			return true;
+		
+		else
+			return false;
+	}
+	
+	
+	
 	public ResponseSpecification responseSpec(int statusCode) {
 		
 		ResponseSpecification res=new ResponseSpecBuilder()
@@ -98,4 +109,7 @@ public class Builder {
 		return res;
 		
 	}
+	
+	
+	
 	}
