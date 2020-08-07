@@ -6,8 +6,11 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import static org.hamcrest.Matchers.equalTo;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.core.IsEqual;
@@ -88,9 +91,34 @@ public class Builder {
 		
 	}
 	
-	public boolean checkValue(String pathOf,String expectedValue) {
+	public boolean checkIfExistAllValuesInJsonResponse(Response response, List<String> listOfValues) {
+		boolean allexist=true;
+		Iterator<String>iterator=listOfValues.iterator();
+		while(iterator.hasNext()) {
+			if(!response.asString().contains(iterator.next())) {
+				allexist= false;
+			}
+		}
+		return allexist;
+	}
+	
+	public boolean checkAllzValuesMappingInJson(Response response, Map<Object,Object> valuesMap) {
+		boolean allexist=true;
+		Iterator<Object>iterator=valuesMap.keySet().iterator();
 		JsonPath js=new JsonPath(response.asString());
-		if(js.getString(pathOf).equalsIgnoreCase(expectedValue)) 
+		while(iterator.hasNext()) {
+			String key=iterator.next().toString();
+			String value=valuesMap.get(key).toString();
+			if(!js.getString(key).toString().equalsIgnoreCase(value));
+			allexist=false;
+			}
+		
+		return allexist;
+	}
+	
+	public boolean checkValue(Response response,String pathOf,String expectedValue) {
+		JsonPath js=new JsonPath(response.asString());
+		if(js.getString(pathOf).toString().equalsIgnoreCase(expectedValue)) 
 			return true;
 		
 		else
@@ -99,7 +127,7 @@ public class Builder {
 	
 	
 	
-	public ResponseSpecification responseSpec(int statusCode) {
+	public ResponseSpecification responseSpec(int statusCode ) {
 		
 		ResponseSpecification res=new ResponseSpecBuilder()
 		.expectStatusCode(statusCode).setDefaultParser(defaultParser.JSON).expectContentType("application/json")

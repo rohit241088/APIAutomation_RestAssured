@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,11 +33,16 @@ public class StepDefinitions extends Builder{
 	}
     
     @Then("^Response should contains \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void response_should_contains_something(String strArg1,String arg2) throws Throwable {
-    	getResponse().then().spec(responseSpec(200).expect()).extract().jsonPath();
+    public void response_should_contains_something(String strArg1,String arg2,DataTable object) throws Throwable {
+     getResponse().then().spec(responseSpec(200)).extract().jsonPath();
+    //	object.asMap(String.class,String.class);
+    	checkAllzValuesMappingInJson(getResponse(),object.asMap(String.class,String.class));
+    	checkIfExistAllValuesInJsonResponse(getResponse(),object.asList());
     	JsonPath json=getJson();
     boolean isEqual=json.getInt("data.size()")==6;
     	assertTrue(isEqual);
+    	assertTrue(checkAllzValuesMappingInJson(getResponse(),object.asMap(String.class,String.class))&&
+    	checkIfExistAllValuesInJsonResponse(getResponse(),object.asList()));
     	
     //assertTrue(object.getResponse().asString().contains(strArg1)&&object.getResponse().asString().contains(arg2));
     }
