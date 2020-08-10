@@ -15,13 +15,13 @@ private String job;
 public String getName() {
 	return name;
 }
-public void setName(String name) {
+public void setName() {
 	this.name=(String) getValueForKey(className, name);
 }
 public String getJob() {
 	return job;
 }
-public void setJob(String job) {
+public void setJob() {
 	this.job=(String) getValueForKey(className, job);
 }
 

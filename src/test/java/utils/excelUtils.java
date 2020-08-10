@@ -32,11 +32,11 @@ public class excelUtils {
 		in = new FileInputStream(excelLocation);
 		String excelExtension = excelLocation.split("\\.")[1];
 		switch (excelExtension) {
-		case "xslx":
+		case "xlsx":
 			wbook = new XSSFWorkbook(in);
 			break;
 		case "xls":
-			wbook = new HSSFWorkbook();
+			wbook = new HSSFWorkbook(in);
 			break;
 		}
 		if (wbook == null) {
