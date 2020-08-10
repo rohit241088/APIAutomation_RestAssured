@@ -144,10 +144,10 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 	}
 	
 	
-	public Map<String,String> keyValueMap(String key, String sheetName){
+	public Map<Object,Object> keyValueMap(){
 		int KeysColumn=-1;
 		int valueColumn=-1;
-		Map<String,String>map=new HashMap<>();
+		Map<Object,Object>map=new HashMap<>();
 			for(int i=0;i<=sheet.getRow(0).getLastCellNum();i++) {
 				if(sheet.getRow(0).getCell(i).getStringCellValue().equalsIgnoreCase("Keys")) {
 					KeysColumn=i;
@@ -158,7 +158,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 				
 			}
 			for(int j=1;j<sheet.getLastRowNum();j++) {
-				map.put(this.returnCellValue(j, KeysColumn).toString(), this.returnCellValue(j, valueColumn).toString());
+				map.put(this.returnCellValue(j, KeysColumn), this.returnCellValue(j, valueColumn));
 			}
 		
 		return map;
