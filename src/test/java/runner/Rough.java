@@ -7,6 +7,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.sql.Date;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -35,17 +39,27 @@ import  io.restassured.filter.OrderedFilter.*;
 public class Rough {
 	
 	
-	  public static void main(String[] args) throws IOException { // TODO Auto-generated method stub
+	 
+	public static void main(String[] args) throws IOException { // TODO Auto-generated method stub
 		//  Response resopnse;
 	 //Method to build request on basis of parameters passed, if query, path,headers,file parameters is not available for request, pass null as value
 		//  RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		//  Cookie someCookie = new Cookie.Builder("some_cookie", "some_value").setSecured(true).setComment("some comment").build();
 		//  given().baseUri("https://reqres.in").request(Method.GET,"/search").then();
-	
-		CreateUser classObject=new CreateUser("F:\\workbase\\APIAutomation_RestAssured\\src\\test\\java\\resources\\TestData.xlsx");
-	classObject.setName();
-	classObject.setJob();
-	  
+		
+
+		
+		  CreateUser classObject=new
+		  CreateUser("F:\\workbase\\APIAutomation_RestAssured\\src\\test\\java\\" +
+		 "resources\\TestData.xlsx");
+		  classObject.setName();
+		  classObject.setJob();
+		 
+		 System.out.println(classObject.getName().toString()+"  "+classObject.getJob()
+		 .toString());
+		 Long EndTime=System.currentTimeMillis();
+		 
+		
 	  
 	  }
 	

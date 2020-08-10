@@ -5,7 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import utils.Builder;
+import testUtils.Builder;
+
 import static org.junit.Assert.*;
 import java.util.HashMap;
 import java.util.Map;

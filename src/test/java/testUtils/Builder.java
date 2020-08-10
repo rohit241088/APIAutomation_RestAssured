@@ -1,8 +1,9 @@
-package utils;
+package testUtils;
 import java.io.File;
 import static io.restassured.RestAssured.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Calendar;
@@ -25,7 +26,15 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-public class Builder {
+import utils.TestDataBuilder;
+public class Builder extends TestDataBuilder {
+	public Builder(String excelLocation) throws IOException {
+		super(excelLocation);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	RequestSpecBuilder requestBuild=null;
 //	static Response response=null;
 	RequestSpecification request=null;
@@ -35,6 +44,8 @@ public class Builder {
 	public Response getResponse() {
 		return response;
 	}
+	
+	
 
 	public RequestSpecification getRequest() {
 		return request;

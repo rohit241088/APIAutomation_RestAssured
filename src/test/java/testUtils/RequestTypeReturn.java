@@ -1,4 +1,4 @@
-package utils;
+package testUtils;
 
 public class RequestTypeReturn {
 

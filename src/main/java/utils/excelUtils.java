@@ -27,10 +27,23 @@ public class excelUtils {
 	private FileOutputStream out = null;
 	private Sheet sheet=null;
 
+	public FileInputStream getIn() {
+		return in;
+	}
+
+	
+	public FileOutputStream getOut() {
+		return out;
+	}
+public Workbook returnWbook() {
+	return wbook;
+}
+	
 	public excelUtils(String excelLocation) throws IOException {
 
 		in = new FileInputStream(excelLocation);
 		String excelExtension = excelLocation.split("\\.")[1];
+		
 		switch (excelExtension) {
 		case "xlsx":
 			wbook = new XSSFWorkbook(in);
@@ -49,9 +62,9 @@ public class excelUtils {
 	public Sheet getSheet() {
 		return sheet;
 	}
-	public Object[][] getSheetData() {
+	public Object[][] getSheetData() throws IOException {
 			int totalRows = sheet.getLastRowNum() + 1;
-			int totalColumns = sheet.getRow(totalRows - 1).getLastCellNum() + 1;
+			int totalColumns = sheet.getRow(totalRows - 1).getLastCellNum() ;
 			Object[][] data = new Object[totalRows - 1][totalColumns];
 
 			for (int i = 1; i < totalRows; i++) {
@@ -61,6 +74,8 @@ public class excelUtils {
 					}
 
 					data[i - 1][j] = this.returnCellValue(i, j);
+					in.close();
+					out.close();
 
 				}
 			}
@@ -71,6 +86,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 	Map<String,Integer>columnMap=new HashMap<>();
 	for(int i=0;i<sheet.getRow(0).getLastCellNum();i++) {
 		columnMap.put(sheet.getRow(0).getCell(i).getStringCellValue(), sheet.getRow(0).getCell(i).getColumnIndex());
+	
 	}
 	return columnMap;
 }
@@ -107,6 +123,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 		while (sheets.hasNext()) {
 			if (sheets.next().getSheetName().equalsIgnoreCase(sheetName)) {
 				sheet=wbook.getSheet(sheetName);
+				sheetexists=true;
 				break;
 			}
 		}
@@ -118,7 +135,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 		
 			List<String> columnHeaders = new ArrayList<>();
 
-			for (int i = 0; i < sheet.getRow(0).getLastCellNum(); i++) {
+			for (int i = 0; i <sheet.getRow(0).getLastCellNum(); i++) {
 				columnHeaders.add(sheet.getRow(0).getCell(i).getStringCellValue());
 			}
 			return columnHeaders;
@@ -128,7 +145,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 			List<Object> columnData = new ArrayList<>();
 			if (getSheetColumnHeaders().contains(columnName)) {
 				int columnNum = getSheetColumnHeaders().indexOf(columnName);
-				for (int i = 0; i < sheet.getLastRowNum(); i++) {
+				for (int i = 0; i <= sheet.getLastRowNum(); i++) {
 					columnData.add(returnCellValue(i, columnNum));
 				}
 			}
@@ -148,16 +165,16 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 		int KeysColumn=-1;
 		int valueColumn=-1;
 		Map<Object,Object>map=new HashMap<>();
-			for(int i=0;i<=sheet.getRow(0).getLastCellNum();i++) {
-				if(sheet.getRow(0).getCell(i).getStringCellValue().equalsIgnoreCase("Keys")) {
+			for(int i=0;i<sheet.getRow(0).getLastCellNum();i++) {
+				if(sheet.getRow(0).getCell(i).getStringCellValue().trim().equalsIgnoreCase("Keys")) {
 					KeysColumn=i;
 				}
-				if(sheet.getRow(0).getCell(i).getStringCellValue().equalsIgnoreCase("Values")) {
+				if(sheet.getRow(0).getCell(i).getStringCellValue().trim().equalsIgnoreCase("Values")) {
 					valueColumn=i;
 				}
 				
 			}
-			for(int j=1;j<sheet.getLastRowNum();j++) {
+			for(int j=1;j<=sheet.getLastRowNum();j++) {
 				map.put(this.returnCellValue(j, KeysColumn), this.returnCellValue(j, valueColumn));
 			}
 		
