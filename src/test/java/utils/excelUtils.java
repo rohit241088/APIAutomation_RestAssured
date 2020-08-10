@@ -25,6 +25,7 @@ public class excelUtils {
 	
 	private FileInputStream in = null;
 	private FileOutputStream out = null;
+	private Sheet sheet=null;
 
 	public excelUtils(String excelLocation) throws IOException {
 
@@ -45,9 +46,10 @@ public class excelUtils {
 		out = new FileOutputStream(excelLocation);
 	}
 
-	public Object[][] getSheetData(String sheetname) {
-		if (this.ifSheetExists(sheetname)) {
-			Sheet sheet = wbook.getSheet(sheetname);
+	public Sheet getSheet() {
+		return sheet;
+	}
+	public Object[][] getSheetData() {
 			int totalRows = sheet.getLastRowNum() + 1;
 			int totalColumns = sheet.getRow(totalRows - 1).getLastCellNum() + 1;
 			Object[][] data = new Object[totalRows - 1][totalColumns];
@@ -58,15 +60,14 @@ public class excelUtils {
 						sheet.getRow(i).createCell(j);
 					}
 
-					data[i - 1][j] = this.returnCellValue(i, j, sheetname);
+					data[i - 1][j] = this.returnCellValue(i, j);
 
 				}
 			}
 			return data;
-		}
-		return null;
+		
 	}
-public Map<String,Integer> getColumnMap(Sheet sheet){
+public Map<String,Integer> getHeaderMap(Sheet sheet){
 	Map<String,Integer>columnMap=new HashMap<>();
 	for(int i=0;i<sheet.getRow(0).getLastCellNum();i++) {
 		columnMap.put(sheet.getRow(0).getCell(i).getStringCellValue(), sheet.getRow(0).getCell(i).getColumnIndex());
@@ -74,12 +75,9 @@ public Map<String,Integer> getColumnMap(Sheet sheet){
 	return columnMap;
 }
 	// Get cellValue as Object
-	public Object returnCellValue(int rowNum, int cellNum, String sheetName) {
-		if (ifSheetExists(sheetName)) {
-			Sheet sheet = wbook.getSheet(sheetName);
+	public Object returnCellValue(int rowNum, int cellNum) {
 			Object cellValue = null;
-
-			if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.BLANK) {
+		if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.BLANK) {
 				sheet.getRow(rowNum).getCell(cellNum).setCellValue("");
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getStringCellValue();
 
@@ -97,19 +95,18 @@ public Map<String,Integer> getColumnMap(Sheet sheet){
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getCellFormula();
 			}
 			return cellValue;
-		}
-		return null;
-	}
+		
+}
 
 	// Check if sheet exists in excel
-	private boolean ifSheetExists(String sheetName) {
+	public boolean setSheet(String sheetName) {
 
 		boolean sheetexists = false;
 		Iterator<Sheet> sheets = wbook.sheetIterator();
 
 		while (sheets.hasNext()) {
 			if (sheets.next().getSheetName().equalsIgnoreCase(sheetName)) {
-				sheetexists = true;
+				sheet=wbook.getSheet(sheetName);
 				break;
 			}
 		}
@@ -117,9 +114,8 @@ public Map<String,Integer> getColumnMap(Sheet sheet){
 		return sheetexists;
 	}
 
-	private List<String> getSheetColumnHeaders(String sheetName) {
-		if (this.ifSheetExists(sheetName)) {
-			Sheet sheet = wbook.getSheet(sheetName);
+	private List<String> getSheetColumnHeaders() {
+		
 			List<String> columnHeaders = new ArrayList<>();
 
 			for (int i = 0; i < sheet.getRow(0).getLastCellNum(); i++) {
@@ -127,24 +123,18 @@ public Map<String,Integer> getColumnMap(Sheet sheet){
 			}
 			return columnHeaders;
 		}
-		return null;
-	}
 
-	public List<Object> getColumnData(String columnName, String sheetName) {
-		if (this.ifSheetExists(sheetName)) {
-			Sheet sheet = wbook.getSheet(sheetName);
+	public List<Object> getColumnData(String columnName) {
 			List<Object> columnData = new ArrayList<>();
-			if (getSheetColumnHeaders(sheetName).contains(columnName)) {
-				int columnNum = getSheetColumnHeaders(sheetName).indexOf(columnName);
+			if (getSheetColumnHeaders().contains(columnName)) {
+				int columnNum = getSheetColumnHeaders().indexOf(columnName);
 				for (int i = 0; i < sheet.getLastRowNum(); i++) {
-					columnData.add(returnCellValue(i, columnNum, sheetName));
+					columnData.add(returnCellValue(i, columnNum));
 				}
 			}
 			return columnData;
 
-		}
-		return null;
-
+		
 	}
 	
 	public void setData() throws IOException {
@@ -152,4 +142,28 @@ public Map<String,Integer> getColumnMap(Sheet sheet){
 			wbook.write(out);
 	
 	}
+	
+	
+	public Map<String,String> keyValueMap(String key, String sheetName){
+		int KeysColumn=-1;
+		int valueColumn=-1;
+		Map<String,String>map=new HashMap<>();
+			for(int i=0;i<=sheet.getRow(0).getLastCellNum();i++) {
+				if(sheet.getRow(0).getCell(i).getStringCellValue().equalsIgnoreCase("Keys")) {
+					KeysColumn=i;
+				}
+				if(sheet.getRow(0).getCell(i).getStringCellValue().equalsIgnoreCase("Values")) {
+					valueColumn=i;
+				}
+				
+			}
+			for(int j=1;j<sheet.getLastRowNum();j++) {
+				map.put(this.returnCellValue(j, KeysColumn).toString(), this.returnCellValue(j, valueColumn).toString());
+			}
+		
+		return map;
+	}
+	
+	
+	
 }
