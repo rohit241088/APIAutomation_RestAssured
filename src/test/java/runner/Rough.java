@@ -28,8 +28,10 @@ import io.restassured.http.Cookie;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import payloads.CreateUser;
-import utils.TestDataBuilder;
+import requestPayloads.CreateUser;
+import requestPayloads.RequestBodyBuilder;
+import testUtils.Builder;
+import utils.RequestDataBuilder;
 
 import static io.restassured.RestAssured.*;
 
@@ -47,18 +49,13 @@ public class Rough {
 		//  Cookie someCookie = new Cookie.Builder("some_cookie", "some_value").setSecured(true).setComment("some comment").build();
 		//  given().baseUri("https://reqres.in").request(Method.GET,"/search").then();
 		
-
+Builder buildRequest=new Builder();
+		 Long StartTime=System.currentTimeMillis();
+		 RequestBodyBuilder builder=new CreateUser();
+		 
 		
-		  CreateUser classObject=new
-		  CreateUser("F:\\workbase\\APIAutomation_RestAssured\\src\\test\\java\\" +
-		 "resources\\TestData.xlsx");
-		  classObject.setName();
-		  classObject.setJob();
 		 
-		 System.out.println(classObject.getName().toString()+"  "+classObject.getJob()
-		 .toString());
-		 Long EndTime=System.currentTimeMillis();
-		 
+		 buildRequest.callAPI("/search", builder.buildRequest(), "post", "https://www.google.com", null, null, null, null);
 		
 	  
 	  }

@@ -1,0 +1,155 @@
+Request method:	GET
+Request URI:	https://www.google.com/search
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Tue, 11 Aug 2020 07:39:23 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Content-Encoding: gzip
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: 1P_JAR=2020-08-11-07; expires=Thu, 10-Sep-2020 07:39:23 GMT; path=/; domain=.google.com; Secure
+Set-Cookie: NID=204=J5JGbowJmODm_F8Vp4CKY9FA4eY17I6xGWz-tYEgIlKt4K7lPD75A1XobWr5Jf9BPaCL-dJkhA4yTKM_Y_vP7pc2NdDQ4FZxYWbrkY1YHnENllX3vB0xJPuQ6edAxQs2RbiCIqmFx4kgOi95StiRnffsfjOhI6Yki6ksuGQqG80; expires=Wed, 10-Feb-2021 07:39:23 GMT; path=/; domain=.google.com; HttpOnly
+Alt-Svc: h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+Transfer-Encoding: chunked
+
+<html lang="en-IN" itemscope="" itemtype="http://schema.org/WebPage">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"/>
+    <title>Google</title>
+    <script nonce="xkhBHYut3Dm/DL5p8C9EJA==">(function(){window.google={kEI:'K0syX_uIDKOa4-EPurmG6Ao',kEXPI:'0,202123,3,4,32,1151584,5663,730,224,5104,207,3204,10,1226,364,925,574,612,205,383,246,5,1354,648,994,1988,469,209,106,3,468,75,453,54,90,194,426,420,135,103,342,124,1120465,1197706,329511,13727,4855,32692,15247,867,6057,13340,9287,9188,8384,4858,1362,283,9007,3022,3896,850,6,11027,1808,4020,978,7931,5297,2054,920,873,1217,2975,2784,3647,1140,7506,2,5878,4517,2778,919,2277,8,2796,1593,1279,2212,530,149,1103,840,517,1139,1,277,53,52,4258,312,1132,4,3,2063,606,2023,544,1233,143,377,1947,2209,113,328,1284,16,2927,24,2222,1813,1788,3226,2845,7,6068,6286,4454,642,2449,3685,1405,338,4928,108,1712,1695,908,2,941,2614,2397,1386,6082,2179,1098,3,346,230,970,865,7,3912,706,148,189,3313,2488,2252,1992,1950,130,1010,651,4,170,1357,376,1299,630,217,1011,8,271,874,405,42,1818,445,1372,278,298,74,1717,52,214,1202,961,464,459,116,1226,213,4067,293,742,1230,86,2019,1264,2,1417,7,69,305,337,1,1772,178,22,1514,556,459,282,1753,690,1968,545,1936,399,49,1126,107,81,320,198,25,887,256,238,70,126,87,476,372,4,7,46,32,130,339,704,129,760,281,3,1424,222,280,376,659,8,15,346,758,653,900,28,62,52,535,244,2,640,2,351,55,943,3,255,569,895,102,895,8,680,169,9,14,1062,371,6,797,107,2,56,1009,2,6,277,589,70,1912,482,809,5776257,3526,8798390,549,333,444,1,2,80,1,900,896,6,4,2,2551,1,748,200,736,4,559,1,4266,1,2,1017,9,305,3299,219,21,8,207,24,4,4,4,4,4,4,5,10,21,10,4,2,48,1,1,1,2,1,1,39,1,33,10,3501752,17238640,3220019,2704831',kBL:'Paxp'};google.sn='webhp';google.kHL='en-IN';})();(function(){google.lc=[];google.li=0;google.getEI=function(a){for(var c;a&amp;&amp;(!a.getAttribute||!(c=a.getAttribute("eid")));)a=a.parentNode;return c||google.kEI};google.getLEI=function(a){for(var c=null;a&amp;&amp;(!a.getAttribute||!(c=a.getAttribute("leid")));)a=a.parentNode;return c};google.ml=function(){return null};google.time=function(){return Date.now()};google.log=function(a,c,b,d,g){if(b=google.logUrl(a,c,b,d,g)){a=new Image;var e=google.lc,f=google.li;e[f]=a;a.onerror=a.onload=a.onabort=function(){delete e[f]};google.vel&amp;&amp;google.vel.lu&amp;&amp;google.vel.lu(b);a.src=b;google.li=f+1}};google.logUrl=function(a,c,b,d,g){var e="",f=google.ls||"";b||-1!=c.search("&amp;ei=")||(e="&amp;ei="+google.getEI(d),-1==c.search("&amp;lei=")&amp;&amp;(d=google.getLEI(d))&amp;&amp;(e+="&amp;lei="+d));d="";!b&amp;&amp;google.cshid&amp;&amp;-1==c.search("&amp;cshid=")&amp;&amp;"slh"!=a&amp;&amp;(d="&amp;cshid="+google.cshid);b=b||"/"+(g||"gen_204")+"?atyp=i&amp;ct="+a+"&amp;cad="+c+e+f+"&amp;zx="+google.time()+d;/^http:/i.test(b)&amp;&amp;"https:"==window.location.protocol&amp;&amp;(google.ml(Error("a"),!1,{src:b,glmm:1}),b="");return b};}).call(this);(function(){google.y={};google.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};}).call(this);google.f={};(function(){
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"==c||"q"==c&amp;&amp;!a.elements.q.value?!0:!1}else a=!1;a&amp;&amp;(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&amp;&amp;a!=document.documentElement;a=a.parentElement)if("A"==a.tagName){a="1"==a.getAttribute("data-nohref");break a}a=!1}a&amp;&amp;b.preventDefault()},!0);}).call(this);
+var a=window.location,b=a.href.indexOf("#");if(0&lt;=b){var c=a.href.substring(b+1);/(^|&amp;)q=/.test(c)&amp;&amp;-1==c.indexOf("#")&amp;&amp;a.replace("/search?"+c.replace(/(^|&amp;)fp=[^&amp;]*/g,"")+"&amp;cad=h")};</script>
+    <style>#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
+</style>
+    <style>body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#36c}.q{color:#00c}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#11c;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#36c}a:visited{color:#551a8b}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#eee;border:solid 1px;border-color:#ccc #999 #999 #ccc;height:30px}.lsbb{display:block}#fll a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#ccc}.lst:focus{outline:none}</style>
+    <script nonce="xkhBHYut3Dm/DL5p8C9EJA=="/>
+  </head>
+  <body bgcolor="#fff">
+    <script nonce="xkhBHYut3Dm/DL5p8C9EJA==">(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n &amp;&amp; window.n();if (document.images){new Image().src=src;}
+if (!iesg){document.f&amp;&amp;document.f.q.focus();document.gbqf&amp;&amp;document.gbqf.q.focus();}
+}
+})();</script>
+    <div id="mngb">
+      <div id="gbar">
+        <nobr>
+          <b class="gb1">Search</b>
+          <a shape="rect" class="gb1" href="https://www.google.co.in/imghp?hl=en&amp;tab=wi">Images</a>
+          <a shape="rect" class="gb1" href="https://maps.google.co.in/maps?hl=en&amp;tab=wl">Maps</a>
+          <a shape="rect" class="gb1" href="https://play.google.com/?hl=en&amp;tab=w8">Play</a>
+          <a shape="rect" class="gb1" href="https://www.youtube.com/?gl=IN&amp;tab=w1">YouTube</a>
+          <a shape="rect" class="gb1" href="https://news.google.co.in/nwshp?hl=en&amp;tab=wn">News</a>
+          <a shape="rect" class="gb1" href="https://mail.google.com/mail/?tab=wm">Gmail</a>
+          <a shape="rect" class="gb1" href="https://drive.google.com/?tab=wo">Drive</a>
+          <a shape="rect" class="gb1" style="text-decoration:none" href="https://www.google.co.in/intl/en/about/products?tab=wh">
+            <u>More</u>
+ »          </a>
+        </nobr>
+      </div>
+      <div id="guser" width="100%">
+        <nobr>
+          <span class="gbi" id="gbn"/>
+          <span class="gbf" id="gbf"/>
+          <span id="gbe"/>
+          <a shape="rect" class="gb4" href="http://www.google.co.in/history/optout?hl=en">Web History</a>
+ |           <a shape="rect" class="gb4" href="/preferences?hl=en">Settings</a>
+ |           <a shape="rect" class="gb4" id="gb_70" target="_top" href="https://accounts.google.com/ServiceLogin?hl=en&amp;passive=true&amp;continue=https://www.google.com/webhp">Sign in</a>
+        </nobr>
+      </div>
+      <div class="gbh" style="left:0"/>
+      <div class="gbh" style="right:0"/>
+    </div>
+    <center>
+      <br clear="all" id="lgpd"/>
+      <div id="lga">
+        <img id="hplogo" alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272"/>
+        <br clear="none"/>
+        <br clear="none"/>
+      </div>
+      <form enctype="application/x-www-form-urlencoded" method="get" action="/search" name="f">
+        <table cellpadding="0" cellspacing="0">
+          <tr valign="top">
+            <td colspan="1" rowspan="1" width="25%"> </td>
+            <td align="center" colspan="1" nowrap="" rowspan="1">
+              <input type="hidden" name="ie" value="ISO-8859-1"/>
+              <input type="hidden" value="en-IN" name="hl"/>
+              <input type="hidden" name="source" value="hp"/>
+              <input type="hidden" name="biw"/>
+              <input type="hidden" name="bih"/>
+              <div class="ds" style="height:32px;margin:4px 0">
+                <input maxlength="2048" type="text" class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Google Search" name="q" size="57"/>
+              </div>
+              <br clear="none" style="line-height:0"/>
+              <span class="ds">
+                <span class="lsbb">
+                  <input type="submit" class="lsb" value="Google Search" name="btnG"/>
+                </span>
+              </span>
+              <span class="ds">
+                <span class="lsbb">
+                  <input type="submit" class="lsb" id="tsuid1" value="I'm Feeling Lucky" name="btnI"/>
+                  <script nonce="xkhBHYut3Dm/DL5p8C9EJA==">(function(){var id='tsuid1';document.getElementById(id).onclick = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled = false;}
+else top.location='/doodles/';};})();</script>
+                  <input type="hidden" value="AINFCbYAAAAAXzJZO2qpiW0YFnPg8Ky_vo11HuYi4xOi" name="iflsig"/>
+                </span>
+              </span>
+            </td>
+            <td align="left" colspan="1" nowrap="" rowspan="1" class="fl sblc" width="25%">
+              <a shape="rect" href="/advanced_search?hl=en-IN&amp;authuser=0">Advanced search</a>
+            </td>
+          </tr>
+        </table>
+        <input type="hidden" id="gbv" name="gbv" value="1"/>
+        <script nonce="xkhBHYut3Dm/DL5p8C9EJA==">(function(){var a,b="1";if(document&amp;&amp;document.getElementById)if("undefined"!=typeof XMLHttpRequest)b="2";else if("undefined"!=typeof ActiveXObject){var c,d,e=["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP","Microsoft.XMLHTTP"];for(c=0;d=e[c++];)try{new ActiveXObject(d),b="2"}catch(h){}}a=b;if("2"==a&amp;&amp;-1==location.search.indexOf("&amp;gbv=2")){var f=google.gbvu,g=document.getElementById("gbv");g&amp;&amp;(g.value=a);f&amp;&amp;window.setTimeout(function(){location.href=f},0)};}).call(this);</script>
+      </form>
+      <div id="gac_scont"/>
+      <div style="font-size:83%;min-height:3.5em">
+        <br clear="none"/>
+        <div id="gws-output-pages-elements-homepage_additional_languages__als">
+          <style>#gws-output-pages-elements-homepage_additional_languages__als{font-size:small;margin-bottom:24px}#SIvCob{display:inline-block;line-height:28px;}#SIvCob a{padding:0 3px;}.H6sW5{display:inline-block;margin:0 2px;white-space:nowrap}.z4hgWe{display:inline-block;margin:0 2px}</style>
+          <div id="SIvCob">
+Google offered in:              <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=hi&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAU">हिन्दी</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=bn&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAY">বাংলা</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=te&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAc">తెలుగు</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=mr&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAg">मराठी</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=ta&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAk">தமிழ்</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=gu&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAo">ગુજરાતી</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=kn&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAs">ಕನ್ನಡ</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=ml&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCAw">മലയാളം</a>
+            <a shape="rect" href="https://www.google.com/setprefs?sig=0_sLz8NYP8yQTNSItqqK5HCF22z5w%3D&amp;hl=pa&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwi7yu_b0pLrAhUjzTgGHbqcAa0Q2ZgBCA0">ਪੰਜਾਬੀ</a>
+          </div>
+        </div>
+      </div>
+      <span id="footer"/>
+      <div style="font-size:10pt">
+        <div id="fll" style="margin:19px auto;text-align:center">
+          <a shape="rect" href="/intl/en/ads/">Advertising Programs</a>
+          <a shape="rect" href="http://www.google.co.in/services/">Business Solutions</a>
+          <a shape="rect" href="/intl/en/about.html">About Google</a>
+          <a shape="rect" href="https://www.google.com/setprefdomain?prefdom=IN&amp;prev=https://www.google.co.in/&amp;sig=K_SHsLHNEzUiccB8ywiP28cprQYbE%3D">Google.co.in</a>
+        </div>
+      </div>
+      <p style="font-size:8pt;color:#767676">
+© 2020 -         <a shape="rect" href="/intl/en/policies/privacy/">Privacy</a>
+ -         <a shape="rect" href="/intl/en/policies/terms/">Terms</a>
+      </p>
+    </center>
+    <script nonce="xkhBHYut3Dm/DL5p8C9EJA==">(function(){window.google.cdo={height:0,width:0};(function(){var a=window.innerWidth,b=window.innerHeight;if(!a||!b){var c=window.document,d="CSS1Compat"==c.compatMode?c.documentElement:c.body;a=d.clientWidth;b=d.clientHeight}a&amp;&amp;b&amp;&amp;(a!=google.cdo.width||b!=google.cdo.height)&amp;&amp;google.log("","","/client_204?&amp;atyp=i&amp;biw="+a+"&amp;bih="+b+"&amp;ei="+google.kEI);}).call(this);})();(function(){var u='/xjs/_/js/k\x3dxjs.hp.en.8iDfQQEpWd0.O/m\x3dsb_he,d/am\x3dAJ5gcw/d\x3d1/rs\x3dACT90oEyS-XCWHQjXp8ZwaF55L7rwkeVoA';
+setTimeout(function(){var b=document;var a="SCRIPT";"application/xhtml+xml"===b.contentType&amp;&amp;(a=a.toLowerCase());a=b.createElement(a);a.src=u;google.timers&amp;&amp;google.timers.load&amp;&amp;google.tick&amp;&amp;google.tick("load","xjsls");document.body.appendChild(a)},0);})();(function(){window.google.xjsu='/xjs/_/js/k\x3dxjs.hp.en.8iDfQQEpWd0.O/m\x3dsb_he,d/am\x3dAJ5gcw/d\x3d1/rs\x3dACT90oEyS-XCWHQjXp8ZwaF55L7rwkeVoA';})();function _DumpException(e){throw e;}
+function _F_installCss(c){}
+(function(){google.jl={dw:false,em:[],emw:false,lls:'default',pdt:0,snet:true,uwp:true};})();(function(){var pmc='{\x22d\x22:{},\x22sb_he\x22:{\x22agen\x22:true,\x22cgen\x22:true,\x22client\x22:\x22heirloom-hp\x22,\x22dh\x22:true,\x22dhqt\x22:true,\x22ds\x22:\x22\x22,\x22ffql\x22:\x22en\x22,\x22fl\x22:true,\x22host\x22:\x22google.com\x22,\x22isbh\x22:28,\x22jsonp\x22:true,\x22msgs\x22:{\x22cibl\x22:\x22Clear Search\x22,\x22dym\x22:\x22Did you mean:\x22,\x22lcky\x22:\x22I\\u0026#39;m Feeling Lucky\x22,\x22lml\x22:\x22Learn more\x22,\x22oskt\x22:\x22Input tools\x22,\x22psrc\x22:\x22This search was removed from your \\u003Ca href\x3d\\\x22/history\\\x22\\u003EWeb History\\u003C/a\\u003E\x22,\x22psrl\x22:\x22Remove\x22,\x22sbit\x22:\x22Search by image\x22,\x22srch\x22:\x22Google Search\x22},\x22ovr\x22:{},\x22pq\x22:\x22\x22,\x22refpd\x22:true,\x22rfs\x22:[],\x22sbpl\x22:16,\x22sbpr\x22:16,\x22scd\x22:10,\x22stok\x22:\x227wjhFYfhiUFsKl5o9tWEi7sMM7A\x22,\x22uhde\x22:false}}';google.pmc=JSON.parse(pmc);})();</script>
+  </body>
+</html>

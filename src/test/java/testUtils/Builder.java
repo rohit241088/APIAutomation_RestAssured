@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import static org.hamcrest.Matchers.equalTo;
-
 import org.hamcrest.Matcher;
 import org.hamcrest.core.IsEqual;
 import org.joda.time.LocalDate;
@@ -26,14 +25,9 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import utils.TestDataBuilder;
-public class Builder extends TestDataBuilder {
-	public Builder(String excelLocation) throws IOException {
-		super(excelLocation);
-		// TODO Auto-generated constructor stub
-	}
-
-
+import utils.RequestDataBuilder;
+public class Builder extends RequestDataBuilder {
+	
 
 	RequestSpecBuilder requestBuild=null;
 //	static Response response=null;
@@ -54,12 +48,12 @@ public class Builder extends TestDataBuilder {
 	
 	
 	//Method to build request on basis of parameters passed, if query, path,headers,file parameters is not available for request, pass null as value
-	public Response callAPI(String resource,String body,String MethodType,String baseURI, Map<String,String> pathParameter,Map<String,String> queryParameters,Map<String,String>headers,File file) {
+	public Response callAPI(String resource,Object body,String MethodType,String baseURI, Map<String,String> pathParameter,Map<String,String> queryParameters,Map<String,String>headers,File file) {
 		
-		String date=LocalDate.now().toString();
+		
 		try {
 			if(out==null) {
-			out=new FileOutputStream(new File("logging.txt"+date));
+			out=new FileOutputStream(new File("logging.txt"+System.nanoTime()));
 			stream=new PrintStream(out);
 		}
 			} catch (FileNotFoundException e) {

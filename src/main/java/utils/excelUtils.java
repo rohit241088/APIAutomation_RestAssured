@@ -56,7 +56,7 @@ public Workbook returnWbook() {
 			System.out.println("Excel file not found");
 		}
 
-		out = new FileOutputStream(excelLocation);
+	
 	}
 
 	public Sheet getSheet() {

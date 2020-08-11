@@ -3,10 +3,7 @@ package stepDefinitions;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
 import java.util.Map;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
