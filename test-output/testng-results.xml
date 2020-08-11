@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="14604" started-at="2020-08-12T02:45:53 IST" finished-at="2020-08-12T02:46:08 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="14604" started-at="2020-08-12T02:45:53 IST" finished-at="2020-08-12T02:46:08 IST">
+      <class name="runner.Rough">
+        <test-method status="PASS" signature="createUserAPI(java.lang.String, java.lang.String)[pri:0, instance:runner.Rough@74650e52]" name="createUserAPI" duration-ms="10066" started-at="2020-08-12T02:45:56 IST" data-provider="returnRequestData" finished-at="2020-08-12T02:46:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rohit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Software Quality Analyst]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAPI -->
+        <test-method status="PASS" signature="createUserAPI(java.lang.String, java.lang.String)[pri:0, instance:runner.Rough@74650e52]" name="createUserAPI" duration-ms="801" started-at="2020-08-12T02:46:06 IST" data-provider="returnRequestData" finished-at="2020-08-12T02:46:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Anjali Vats]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Software Developer]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAPI -->
+        <test-method status="PASS" signature="createUserAPI(java.lang.String, java.lang.String)[pri:0, instance:runner.Rough@74650e52]" name="createUserAPI" duration-ms="485" started-at="2020-08-12T02:46:06 IST" data-provider="returnRequestData" finished-at="2020-08-12T02:46:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Deepak]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Banker]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAPI -->
+        <test-method status="PASS" signature="createUserAPI(java.lang.String, java.lang.String)[pri:0, instance:runner.Rough@74650e52]" name="createUserAPI" duration-ms="541" started-at="2020-08-12T02:46:07 IST" data-provider="returnRequestData" finished-at="2020-08-12T02:46:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Suhaani]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Love creator]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAPI -->
+        <test-method status="PASS" signature="createUserAPI(java.lang.String, java.lang.String)[pri:0, instance:runner.Rough@74650e52]" name="createUserAPI" duration-ms="484" started-at="2020-08-12T02:46:07 IST" data-provider="returnRequestData" finished-at="2020-08-12T02:46:08 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Veenu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Innovator]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAPI -->
+      </class> <!-- runner.Rough -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

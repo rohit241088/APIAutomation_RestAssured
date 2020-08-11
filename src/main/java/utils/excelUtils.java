@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -93,22 +94,31 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 	// Get cellValue as Object
 	public Object returnCellValue(int rowNum, int cellNum) {
 			Object cellValue = null;
-		if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.BLANK) {
+			if(sheet.getRow(rowNum)==null) {
+				sheet.createRow(rowNum);
+			}
+		if (sheet.getRow(rowNum).getCell(cellNum) == null) {
+			sheet.getRow(rowNum).getCell(cellNum, MissingCellPolicy.CREATE_NULL_AS_BLANK);
 				sheet.getRow(rowNum).getCell(cellNum).setCellValue("");
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getStringCellValue();
+				return cellValue;
 
 			}
 			if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.BOOLEAN) {
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getBooleanCellValue();
+				return cellValue;
 			}
 			if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.NUMERIC) {
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getNumericCellValue();
+				return cellValue;
 			}
 			if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.STRING) {
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getStringCellValue();
+				return cellValue;
 			}
 			if (sheet.getRow(rowNum).getCell(cellNum).getCellType() == CellType.FORMULA) {
 				cellValue = sheet.getRow(rowNum).getCell(cellNum).getCellFormula();
+				return cellValue;
 			}
 			return cellValue;
 		
@@ -161,25 +171,7 @@ public Map<String,Integer> getHeaderMap(Sheet sheet){
 	}
 	
 	
-	public Map<Object,Object> keyValueMap(){
-		int KeysColumn=-1;
-		int valueColumn=-1;
-		Map<Object,Object>map=new HashMap<>();
-			for(int i=0;i<sheet.getRow(0).getLastCellNum();i++) {
-				if(sheet.getRow(0).getCell(i).getStringCellValue().trim().equalsIgnoreCase("Keys")) {
-					KeysColumn=i;
-				}
-				if(sheet.getRow(0).getCell(i).getStringCellValue().trim().equalsIgnoreCase("Values")) {
-					valueColumn=i;
-				}
-				
-			}
-			for(int j=1;j<=sheet.getLastRowNum();j++) {
-				map.put(this.returnCellValue(j, KeysColumn), this.returnCellValue(j, valueColumn));
-			}
-		
-		return map;
-	}
+	
 	
 	
 	

@@ -2,11 +2,13 @@ package requestPayloads;
 
 import java.util.Map;
 
+import org.testng.annotations.DataProvider;
+
 import utils.RequestDataBuilder;
 
-public class CreateUser extends RequestBodyBuilder  {
+public class CreateUser  {
 
-private Map<Object,Object>keyValues=RequestDataBuilder.returnKeyValueData(CreateUser.class.getSimpleName());
+//private Map<Object,Object>keyValues=RequestDataBuilder.returnKeyValueData(CreateUser.class.getSimpleName());
 private String name;
 private String job;
 public String getName() {
@@ -15,29 +17,30 @@ public String getName() {
 
 
 public void setName() {
-	this.name=keyValues.get("name").toString();
+	this.name="name";
 	
 }
 public String getJob() {
 	return job;
 }
 public void setJob() {
-	this.job=keyValues.get("job").toString();
+	this.job="job";
 	
 }
 
 
-@Override
-public CreateUser buildRequest() {
+public static Object getInstance() {
 	// TODO Auto-generated method stub
-	this.setName();
-	this.setJob();
-	return this;
+	CreateUser user=new CreateUser();
+	
+	return user;
 }
 
 
-
-
+@DataProvider(name="returnRequestData")
+public static Object[][] returnRequestData(){
+	return RequestDataBuilder.requestData(new CreateUser());
+}
 
 
 

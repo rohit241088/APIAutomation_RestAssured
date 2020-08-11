@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Parameter;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
@@ -15,6 +17,7 @@ import static org.hamcrest.Matchers.equalTo;
 import org.hamcrest.Matcher;
 import org.hamcrest.core.IsEqual;
 import org.joda.time.LocalDate;
+import org.json.simple.JSONObject;
 import org.junit.Assert;
 import static org.hamcrest.Matchers.lessThan;
 import io.restassured.builder.RequestSpecBuilder;
@@ -25,6 +28,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import requestPayloads.CreateUser;
+import runner.Rough;
 import utils.RequestDataBuilder;
 public class Builder extends RequestDataBuilder {
 	
@@ -94,6 +99,20 @@ public class Builder extends RequestDataBuilder {
 		JsonPath js=new JsonPath(response.asString());
 		return js;
 		
+	}
+	public static JSONObject getJsonObject(Class cls,String key1,String key2) throws NoSuchMethodException, SecurityException {
+		Field[] fields=RequestDataBuilder.getAllFieldsMembers(CreateUser.getInstance());
+		Parameter[]parameters=cls.getMethod("getJsonObject",Class.class, String.class,String.class).getParameters();
+		JSONObject json=new JSONObject();
+			for(int i=0;i<fields.length;i=i+2) {
+				json.put(fields[i].getName(),key1);
+				json.put(fields[i+1].getName(),key2);
+				
+				
+				
+			}
+			return json;
+			
 	}
 	
 	public boolean checkIfExistAllValuesInJsonResponse(Response response, List<String> listOfValues) {
